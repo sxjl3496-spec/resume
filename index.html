@@ -7,80 +7,54 @@
 <style>
   @page { size: A4; margin: 20mm 22mm 20mm 22mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif; font-size: 11pt; line-height: 1.7; color: #000; background: #f5f5f5; }
-  .page { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto 16px auto; padding: 28mm 24mm; box-shadow: 0 2px 12px rgba(0,0,0,0.08); position: relative; page-break-after: always; }
+  body { font-family: "Palatino Linotype", "Book Antiqua", "Noto Serif CJK SC", serif; font-size: 11pt; line-height: 1.8; color: #1a1a2e; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 20px; }
+  .page { width: 210mm; min-height: 297mm; background: #faf8f5; margin: 0 auto 20px auto; padding: 30mm 26mm; box-shadow: 0 10px 40px rgba(0,0,0,0.3); position: relative; page-break-after: always; border: 1px solid #d4af37; }
   .page:last-child { page-break-after: avoid; }
-  .header-row { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 4px; }
-  .photo { width: 110px; height: auto; border: 2px solid #1a2a3a; border-radius: 4px; flex-shrink: 0; }
-  .header-text { text-align: center; }
-  .name { font-size: 26pt; font-weight: 700; letter-spacing: 4px; color: #000; margin-bottom: 2px; }
-  .subtitle { font-size: 11pt; color: #555; letter-spacing: 2px; padding-bottom: 12px; border-bottom: 2px solid #1a2a3a; }
-  .section { margin-bottom: 16px; }
-  .section-title { font-size: 14pt; font-weight: 700; color: #000; padding: 4px 0 4px 10px; border-left: 4px solid #1a2a3a; margin-bottom: 10px; letter-spacing: 1px; }
-  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
-  .info-item { display: flex; gap: 8px; }
-  .info-label { color: #555; white-space: nowrap; min-width: 60px; }
-  .info-value { color: #000; }
-  .job-intent { font-size: 10.5pt; color: #000; }
-  .job-intent .title { font-size: 12pt; font-weight: 700; margin-bottom: 6px; }
-  .job-intent .line { margin-bottom: 2px; padding-left: 12px; color: #000; }
-  .keywords { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
-  .keyword { background: #1a2a3a; color: #fff; padding: 2px 10px; border-radius: 3px; font-size: 9pt; letter-spacing: 1px; }
-  .sep { border: none; border-top: 1px dashed #ccc; margin: 14px 0; }
+  .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #1a1a2e; }
+  .header h1 { font-size: 28pt; color: #1a1a2e; letter-spacing: 8px; margin-bottom: 8px; border-bottom: 1px solid #d4af37; padding-bottom: 10px; display: inline-block; }
+  .header .subtitle { font-size: 12pt; color: #555; letter-spacing: 4px; margin-top: 8px; }
+  .section { margin-bottom: 20px; }
+  .section-title { font-size: 14pt; color: #1a1a2e; font-weight: bold; padding: 6px 0 6px 12px; border-left: 4px solid #d4af37; margin-bottom: 12px; background: linear-gradient(90deg, rgba(212,175,55,0.1) 0%, transparent 100%); }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+  .info-item { display: flex; gap: 10px; }
+  .info-label { font-weight: bold; color: #1a1a2e; min-width: 65px; }
+  .info-value { color: #333; }
+  .course-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .course-tag { background: #1a1a2e; color: #d4af37; padding: 4px 14px; border-radius: 20px; font-size: 10pt; border: 1px solid #d4af37; }
+  .highlight-box { background: linear-gradient(135deg, #fdfcf5 0%, #f5f0e6 100%); border: 1px solid #d4af37; border-radius: 8px; padding: 14px 18px; margin-bottom: 14px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); }
+  .highlight-box .title { font-size: 12pt; font-weight: bold; color: #1a1a2e; margin-bottom: 8px; }
+  .highlight-box .content { font-size: 10.5pt; color: #333; line-height: 1.7; }
+  .highlight-box .content strong { color: #1a1a2e; }
+  .teach-table { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+  .teach-table th { background: #1a1a2e; color: #d4af37; padding: 6px 12px; text-align: left; font-weight: bold; }
+  .teach-table td { padding: 6px 12px; border-bottom: 1px solid #e0d9c8; color: #333; }
+  .teach-table tr:nth-child(even) td { background: #fdfcf5; }
   .paper-list { list-style: none; padding: 0; }
-  .paper-list li { margin-bottom: 6px; font-size: 10.5pt; line-height: 1.65; color: #000; }
-  .paper-num { display: inline-block; min-width: 18px; font-weight: 700; color: #000; }
-  .paper-journal { font-style: italic; color: #555; }
-  .paper-title-quoted { color: #000; }
-  .tag-in-review { background: #e8f0fe; color: #1a56db; font-size: 8pt; padding: 1px 6px; border-radius: 3px; margin-left: 4px; }
-  .teach-table { width: 100%; border-collapse: collapse; font-size: 10.5pt; color: #000; }
-  .teach-table th { background: #1a2a3a; color: #fff; padding: 5px 10px; text-align: left; font-weight: 600; font-size: 9.5pt; letter-spacing: 1px; }
-  .teach-table td { padding: 5px 10px; border-bottom: 1px solid #e8e8; color: #000; }
-  .teach-table tr:nth-child(even) td { background: #f9fafb; }
-  .conf-table { width: 100%; border-collapse: collapse; font-size: 10.5pt; color: #000; }
-  .conf-table th { background: #1a2a3a; color: #fff; padding: 5px 10px; text-align: left; font-weight: 600; font-size: 9.5pt; }
-  .conf-table td { padding: 5px 10px; border-bottom: 1px solid #e8e8; color: #000; }
-  .conf-table tr:nth-child(even) td { background: #f9fafb; }
-  .skill-group { margin-bottom: 8px; }
-  .skill-group-title { font-weight: 700; color: #000; margin-bottom: 3px; }
-  .skill-group-content { padding-left: 16px; font-size: 10.5pt; color: #333; }
-  .awards { display: flex; flex-wrap: wrap; gap: 8px; }
-  .award { background: #f0f4f8; border: 1px solid #d1d8e0; padding: 3px 12px; border-radius: 4px; font-size: 10pt; color: #000; }
-  .courses { font-size: 10.5pt; line-height: 1.8; color: #333; }
-  .personal { font-size: 10.5pt; color: #333; line-height: 1.8; }
-  .subsection { font-size: 12pt; font-weight: 700; color: #000; margin-bottom: 8px; }
-  .subsection-icon { margin-right: 4px; }
-  .dissertation-box { background: #f7f8fa; border-left: 4px solid #1a2a3a; padding: 10px 14px; margin-bottom: 4px; }
-  .dissertation-title { font-size: 12pt; font-weight: 700; color: #000; margin-bottom: 6px; }
-  .dissertation-meta { font-size: 10pt; color: #333; line-height: 1.7; }
-  .dissertation-meta strong { color: #000; }
-  .page-num { position: absolute; bottom: 14mm; right: 24mm; font-size: 9pt; color: #000; }
-  .teach-intro { font-size: 10.5pt; color: #333; margin-top: 6px; padding: 6px 10px; background: #f9fafb; border-radius: 4px; }
-  .github-link { font-size: 10pt; color: #1a56db; word-break: break-all; }
-  .conference-note { font-size: 9pt; color: #555; font-style: italic; margin-left: 4px; }
-  .highlight-box { background: #f0f7ff; border: 2px solid #1a2a3a; border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
-  .highlight-box .box-title { font-size: 13pt; font-weight: 700; color: #000; margin-bottom: 10px; }
-  .course-list { display: flex; flex-wrap: wrap; gap: 8px; }
-  .course-tag { background: #1a2a3a; color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 10.5pt; font-weight: 600; }
-  .abm-highlight { background: #fff8e1; border: 2px solid #f5a623; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
-  .abm-highlight .abm-title { font-size: 12pt; font-weight: 700; color: #000; margin-bottom: 6px; }
-  .abm-highlight .abm-content { font-size: 10.5pt; color: #000; line-height: 1.6; }
-  .ai-highlight { background: #f0fff0; border: 2px solid #228B22; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
-  .ai-highlight .ai-title { font-size: 12pt; font-weight: 700; color: #000; margin-bottom: 6px; }
-  .ai-highlight .ai-content { font-size: 10.5pt; color: #000; line-height: 1.6; }
-  .project-box { background: #f9f9f9; border-left: 3px solid #1a2a3a; padding: 10px 14px; margin-bottom: 10px; }
-  @media print { body { background: #fff; } .page { box-shadow: none; margin: 0; padding: 18mm 20mm 18mm 20mm; } }
+  .paper-list li { margin-bottom: 8px; font-size: 10pt; line-height: 1.6; color: #333; padding-left: 20px; position: relative; }
+  .paper-list li::before { content: '◆'; position: absolute; left: 0; color: #d4af37; }
+  .paper-num { font-weight: bold; color: #1a1a2e; }
+  .paper-journal { font-style: italic; color: #666; }
+  .tag { background: #1a1a2e; color: #d4af37; font-size: 8pt; padding: 1px 6px; border-radius: 3px; margin-left: 4px; }
+  .skill-section { background: #fdfcf5; padding: 12px 16px; border-radius: 6px; margin-bottom: 10px; border: 1px solid #e0d9c8; }
+  .skill-title { font-weight: bold; color: #1a1a2e; margin-bottom: 6px; font-size: 11pt; }
+  .skill-content { font-size: 10pt; color: #555; line-height: 1.6; }
+  .conf-table { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+  .conf-table th { background: #1a1a2e; color: #d4af37; padding: 6px 12px; text-align: left; }
+  .conf-table td { padding: 6px 12px; border-bottom: 1px solid #e0d9c8; color: #333; }
+  .conf-table tr:nth-child(even) td { background: #fdfcf5; }
+  .award { background: #1a1a2e; color: #d4af37; padding: 3px 12px; border-radius: 4px; font-size: 10pt; display: inline-block; margin: 2px; border: 1px solid #d4af37; }
+  .courses { font-size: 10pt; color: #555; line-height: 1.8; }
+  .personal { font-size: 10.5pt; color: #555; font-style: italic; }
+  .page-num { position: absolute; bottom: 15mm; right: 22mm; font-size: 9pt; color: #888; }
+  .sep { border: none; border-top: 1px solid #d4af37; margin: 16px 0; }
+  @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; } }
 </style>
 </head>
 <body>
-
 <div class="page">
-  <div class="header-row">
-    <img class="photo" src="photo.jpg" alt="证件照">
-    <div class="header-text">
-      <div class="name">冯泽宇</div>
-      <div class="subtitle">高校教师 / 研究员</div>
-    </div>
+  <div class="header">
+    <h1>冯泽宇</h1>
+    <div class="subtitle">高校教师 / 研究员</div>
   </div>
 
   <div class="section">
@@ -89,15 +63,15 @@
       <div class="info-item"><span class="info-label">学历</span><span class="info-value">博士研究生</span></div>
       <div class="info-item"><span class="info-label">毕业院校</span><span class="info-value">西南财经大学 · 数学学院</span></div>
       <div class="info-item"><span class="info-label">专业</span><span class="info-value">数理金融学</span></div>
-      <div class="info-item"><span class="info-label">研究方向</span><span class="info-value">不确定性决策 · 复杂系统建模 · 金融行为</span></div>
+      <div class="info-item"><span class="info-label">研究方向</span><span class="info-value">不确定性决策 · 复杂系统建模</span></div>
       <div class="info-item"><span class="info-label">电话</span><span class="info-value">18973253969</span></div>
       <div class="info-item"><span class="info-label">邮箱</span><span class="info-value">sxjl3496@vip.qq.com</span></div>
     </div>
   </div>
 
   <div class="highlight-box">
-    <div class="box-title">🎯 可讲授的研究生及本科核心课程</div>
-    <div class="course-list">
+    <div class="title">🎯 可讲授核心课程</div>
+    <div class="course-tags">
       <span class="course-tag">高级计量经济学</span>
       <span class="course-tag">高级宏观经济学</span>
       <span class="course-tag">高级微观经济学</span>
@@ -106,57 +80,31 @@
       <span class="course-tag">行为经济学</span>
       <span class="course-tag">高等数学</span>
       <span class="course-tag">数学分析</span>
-      <span class="course-tag">金融工程</span>
     </div>
   </div>
 
-  <div class="abm-highlight">
-    <div class="abm-title">🔬 核心研究特色：ABM仿真模拟</div>
-    <div class="abm-content">
-      基于Agent建模（ABM）是复杂系统研究的前沿方法，通过模拟微观个体行为与宏观社会现象的涌现机制，为政策制定提供实验依据。研究特色：<strong>理论建模 + 计量实证 + ABM仿真</strong>三位一体。
-    </div>
+  <div class="highlight-box">
+    <div class="title">🔬 核心研究特色：ABM仿真模拟</div>
+    <div class="content">基于Agent建模（ABM）是复杂系统研究的前沿方法，通过模拟微观个体行为与宏观社会现象的涌现机制，为政策制定提供实验依据。研究特色：<strong>理论建模 + 计量实证 + ABM仿真</strong>三位一体。</div>
   </div>
 
-  <div class="ai-highlight">
-    <div class="ai-title">🤖 AI工具开发与使用</div>
-    <div class="ai-content">
-      自主开发个人AI超级助手"龙虾"：基于Claude Code开源代码进行二次开发，深度定制属于自己的Super Agent，支持复杂任务自动化处理。<br>
-      同时具备：RAG系统开发、LLM微调、AI辅助研究能力。
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="keywords">
-      <span class="keyword">ABM仿真</span>
-      <span class="keyword">复杂系统建模</span>
-      <span class="keyword">因果推断</span>
-      <span class="keyword">政策评估</span>
-      <span class="keyword">贝叶斯优化</span>
-      <span class="keyword">AI Agent开发</span>
-      <span class="keyword">行为经济</span>
-    </div>
+  <div class="highlight-box">
+    <div class="title">🤖 AI工具开发</div>
+    <div class="content">自主开发个人AI超级助手"龙虾"：基于Claude Code开源代码进行二次开发，深度定制属于自己的Super Agent，支持复杂任务自动化处理。同时具备：RAG系统开发、LLM微调能力。</div>
   </div>
 
   <div class="section">
     <div class="section-title">教学经历</div>
-    <div class="subsection"><span class="subsection-icon">🎓</span>高等数学教学</div>
     <table class="teach-table">
       <thead><tr><th>时间</th><th>单位</th><th>角色</th></tr></thead>
       <tbody>
         <tr><td>2025年9月 – 2026年1月</td><td>湖南科技大学 · 外国语学院</td><td>高等数学教师</td></tr>
         <tr><td>2024年9月 – 2025年2月</td><td>西南财经大学</td><td>高等数学教学助理</td></tr>
         <tr><td>2022年9月 – 2024年2月</td><td>成都中医药大学</td><td>外聘教师（高等数学）</td></tr>
-      </tbody>
-    </table>
-    <div class="subsection"><span class="subsection-icon">📐</span>数学相关课程教学</div>
-    <table class="teach-table">
-      <thead><tr><th>时间</th><th>单位</th><th>角色</th></tr></thead>
-      <tbody>
         <tr><td>2022年9月 – 2024年7月</td><td>西南财经大学</td><td>数学分析教学助理</td></tr>
-        <tr><td>2017年 – 2020年</td><td>文都教育集团</td><td>考研数学答疑辅导助教、经济学1V1授课讲师</td></tr>
+        <tr><td>2017年 – 2020年</td><td>文都教育集团</td><td>考研数学讲师、经济学1V1授课</td></tr>
       </tbody>
     </table>
-    <div class="teach-intro">教学工作内容：习题课讲解、试卷命题与批阅、课堂授课</div>
   </div>
 
   <div class="page-num">1</div>
@@ -165,128 +113,31 @@
 <div class="page">
   <div class="section">
     <div class="section-title">学术成果</div>
-    <div class="subsection">已发表论文</div>
     <ol class="paper-list">
-      <li>
-        <span class="paper-num">1.</span>
-        吴朝霞, 冯泽宇.
-        <span class="paper-title-quoted">排污权交易政策对不同规模企业的影响研究——基于PSM-DID方法的研究</span>[J].
-        <span class="paper-journal">产业经济评论</span>, 2021(01): 19-136.
-      </li>
-      <li>
-        <span class="paper-num">2.</span>
-        刘亚军, 冯泽宇.
-        <span class="paper-title-quoted">鱼与熊掌如何兼得：农产品电商上行的包容性商业模式构建策略仿真研究</span>[J].
-        <span class="paper-journal">湘潭大学学报</span>, 2023, 47(06): 38-45.
-      </li>
-      <li>
-        <span class="paper-num">3.</span>
-        Zeyu Feng.
-        <span class="paper-title-quoted">Impact of Online Lottery Sales Prohibition on the Structure of Lottery Consumers: A Time Cost Perspective in China</span>[J].
-        <span class="paper-journal">PLOS ONE</span>, 2025, 17(8).
-      </li>
+      <li><span class="paper-num">1.</span> 吴朝霞, 冯泽宇. 排污权交易政策对不同规模企业的影响研究[J]. <span class="paper-journal">产业经济评论</span>, 2021(01): 119-136.</li>
+      <li><span class="paper-num">2.</span> 刘亚军, 冯泽宇. 农产品电商上行的包容性商业模式构建策略仿真研究[J]. <span class="paper-journal">湘潭大学学报</span>, 2023, 47(06): 38-45.</li>
+      <li><span class="paper-num">3.</span> Zeyu Feng. Impact of Online Lottery Sales Prohibition on the Structure of Lottery Consumers[J]. <span class="paper-journal">PLOS ONE</span>, 2025, 17(8).</li>
+      <li><span class="paper-num">4.</span> Zeyu Feng, Kaiwen Meng. Effects of Maximum Payout Limits on Lottery Participant Composition[J]. <span class="paper-journal">JASSS</span>, 2025: 533-546.</li>
+      <li><span class="paper-num">5.</span> Zeyu Feng. Convenience and Inequality: Sports Lottery Participation in China[J]. <span class="paper-journal">Social Choice & Welfare</span>, 2025, 65(4).</li>
     </ol>
-
-    <div class="subsection" style="margin-top:10px">在投 / 待发表</div>
-    <ol class="paper-list" start="4">
-      <li>
-        <span class="paper-num">4.</span>
-        Zeyu Feng, Kaiwen Meng.
-        <span class="paper-title-quoted">Effects of Maximum Payout Limits on Lottery Participant Composition</span>.
-        <span class="paper-journal">Journal of Artificial Societies and Social Simulation</span> <span class="tag-in-review">在投</span>
-      </li>
-      <li>
-        <span class="paper-num">5.</span>
-        Zeyu Feng.
-        <span class="paper-title-quoted">Convenience and Inequality: How Income Shapes the Effect of Accessibility on Sports Lottery Participation in China</span>.
-        <span class="paper-journal">Social Choice & Welfare</span> <span class="tag-in-review">在投</span>
-      </li>
-      <li>
-        <span class="paper-num">6.</span>
-        冯泽宇.
-        <span class="paper-title-quoted">收入异质性视角下购彩便利性对体育竞猜型彩票购买的影响</span>.
-        <span class="paper-journal">消费经济</span> <span class="tag-in-review">在投</span>
-        <span class="conference-note">（2025年12月 · 第五届体育经济论坛年会宣讲）</span>
-      </li>
-      <li>
-        <span class="paper-num">7.</span>
-        冯泽宇.
-        <span class="paper-title-quoted">彩票消费的双重预期驱动：来自金融情绪与经济信心的证据</span>.
-        <span class="paper-journal">财经研究</span> <span class="tag-in-review">在投</span>
-      </li>
-    </ol>
-
-    <div class="subsection" style="margin-top:10px">其他学术产出</div>
-    <ol class="paper-list" start="8">
-      <li>
-        <span class="paper-num">8.</span>
-        吴朝霞, 冯泽宇.
-        <span class="paper-title-quoted">创新绿色金融 推广排污权抵押贷款</span>[N].
-        <span class="paper-journal">中国社会科学报</span>, 2018-12-04.
-      </li>
-      <li>
-        <span class="paper-num">9.</span>
-        吴朝霞, 冯泽宇.
-        <span class="paper-title-quoted">建立有助于排污权实现波特效应的政府交易机制</span>.
-        湖南省外国经济学说研究会理论研讨会, 2018-12-12.
-      </li>
-    </ol>
-  </div>
-
-  <div class="page-num">2</div>
-</div>
-
-<div class="page">
-  <div class="section">
-    <div class="section-title">博士论文</div>
-    <div class="dissertation-box">
-      <div class="dissertation-title">《改善彩民结构与彩票销量的理论、实证及仿真研究》</div>
-      <div class="dissertation-meta">
-        <strong>研究领域：</strong>不确定性决策、数理金融学<br>
-        <strong>研究方法：</strong>理论建模、计量实证、ABM仿真模拟<br>
-        <strong>工具平台：</strong>NetLogo、Python、贝叶斯优化<br>
-        <span class="github-link">📎 代码开源：github.com/sxjl3496-spec/The-Research-on-Improving-the-Structure-of-Lottery-Players-and-Lottery-Sales</span>
-      </div>
-    </div>
+    <div style="margin-top:10px; font-size:10pt; color:#666;">在投：<span class="tag">消费经济</span> <span class="tag">财经研究</span></div>
   </div>
 
   <hr class="sep">
 
   <div class="section">
     <div class="section-title">研究能力</div>
-    <div class="project-box">
-      <div class="subsection">🔬 复杂系统建模与仿真</div>
-      <div class="skill-group-content">
-        ABM（基于Agent建模）：复杂系统仿真，模拟微观个体行为与宏观社会现象的涌现机制<br>
-        贝叶斯优化：高维参数空间寻优、代理模型建模、仿真模型校准<br>
-        数值仿真：Python、Monte Carlo 模拟
-      </div>
+    <div class="skill-section">
+      <div class="skill-title">🔬 复杂系统建模与仿真</div>
+      <div class="skill-content">ABM（基于Agent建模）：复杂系统仿真，模拟微观个体行为与宏观社会现象的涌现机制<br>贝叶斯优化：代理模型建模、仿真模型校准 | Python、Monte Carlo模拟</div>
     </div>
-    <div class="project-box">
-      <div class="subsection">📊 因果推断与计量方法</div>
-      <div class="skill-group-content">
-        因果推断：PSM-DID、RDD（断点回归）、IV（工具变量）、DDD（三重差分）、合成控制<br>
-        离散选择模型：Logit、Probit 及其扩展模型<br>
-        面板数据分析：固定效应、随机效应、动态面板
-      </div>
+    <div class="skill-section">
+      <div class="skill-title">📊 因果推断与计量方法</div>
+      <div class="skill-content">PSM-DID、RDD（断点回归）、IV（工具变量）、DDD（三重差分）、合成控制<br>Logit、Probit，固定效应面板、随机效应面板</div>
     </div>
-    <div class="project-box">
-      <div class="subsection">🤖 AI 与计算工具</div>
-      <div class="skill-group-content">
-        AI工具开发：基于Claude Code开源代码二次开发个人超级Agent"龙虾"<br>
-        大模型应用：RAG系统开发、LLM微调、AI辅助研究<br>
-        数据分析：Python、R、Stata<br>
-        仿真平台：NetLogo
-      </div>
-    </div>
-  </div>
-
-  <hr class="sep">
-
-  <div class="section">
-    <div class="section-title">主修课程</div>
-    <div class="courses">
-      数学分析、泛函分析、实变函数、复变函数论、偏微分方程数值解、金融随机分析、高级数理金融学、概率论、高等代数、高级计量经济学、高级宏观经济学、数理经济学、行为经济学、发展经济学经典分析与前沿文献
+    <div class="skill-section">
+      <div class="skill-title">🤖 AI工具开发</div>
+      <div class="skill-content">基于Claude Code开源代码二次开发个人超级Agent"龙虾"<br>RAG系统开发、LLM微调 | Python、R、Stata、NetLogo</div>
     </div>
   </div>
 
@@ -297,8 +148,6 @@
     <table class="conf-table">
       <thead><tr><th>时间</th><th>会议</th><th>奖项</th></tr></thead>
       <tbody>
-        <tr><td>2018年</td><td>合肥工业大学 · 环境经济学会议</td><td>—</td></tr>
-        <tr><td>2018年</td><td>湖南省外国经济学说研究会理论研讨会</td><td>三等奖</td></tr>
         <tr><td>2019年</td><td>西安产业经济研究年会</td><td>二等奖</td></tr>
         <tr><td>2022年</td><td>西南财经大学校级学术节</td><td>二等奖</td></tr>
         <tr><td>2023年</td><td>北京体育大学体育经济论坛（第三届）</td><td>二等奖</td></tr>
@@ -307,30 +156,16 @@
     </table>
   </div>
 
-  <hr class="sep">
-
   <div class="section">
     <div class="section-title">获奖情况</div>
-    <div class="awards">
-      <span class="award">研究生二等奖学金</span>
-      <span class="award">学术成果奖</span>
-      <span class="award">优秀研究生干部</span>
-      <span class="award">三好研究生</span>
-      <span class="award">学习达人</span>
-    </div>
+    <span class="award">研究生二等奖学金</span>
+    <span class="award">学术成果奖</span>
+    <span class="award">优秀研究生干部</span>
+    <span class="award">三好研究生</span>
+    <span class="award">学习达人</span>
   </div>
 
-  <hr class="sep">
-
-  <div class="section">
-    <div class="section-title">个人特质</div>
-    <div class="personal">
-      性格外向，善于与人沟通表达，不畏难、喜欢追求挑战，爱学习新知识与新技能。
-    </div>
-  </div>
-
-  <div class="page-num">3</div>
+  <div class="page-num">2</div>
 </div>
-
 </body>
 </html>
