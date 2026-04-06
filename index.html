@@ -18,11 +18,7 @@
   }
   .page:last-child { page-break-after: avoid; }
   .header-row { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 4px; }
- .photo {
-    width: 120px; height: auto;
-    border: 2px solid #1a2a3a; border-radius: 4px; flex-shrink: 0;
-}
-
+  .photo { width: 120px; height: auto; border: 2px solid #1a2a3a; border-radius: 4px; flex-shrink: 0; }
   .header-text { text-align: center; }
   .name { font-size: 28pt; font-weight: 700; letter-spacing: 6px; color: #1a2a3a; margin-bottom: 2px; }
   .subtitle { font-size: 11pt; color: #66; letter-spacing: 2px; padding-bottom: 14px; border-bottom: 2px solid #1a2a3a; }
@@ -73,6 +69,13 @@
   .teach-intro { font-size: 10.5pt; color: #44; margin-top: 6px; padding: 6px 10px; background: #f9fafb; border-radius: 4px; }
   .github-link { font-size: 10pt; color: #1a56db; word-break: break-all; }
   .conference-note { font-size: 9pt; color: #66; font-style: italic; margin-left: 4px; }
+  .highlight-box { background: #f0f7ff; border: 2px solid #1a56db; border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
+  .highlight-box .box-title { font-size: 13pt; font-weight: 700; color: #1a56db; margin-bottom: 10px; }
+  .course-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .course-tag { background: #1a56db; color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 10.5pt; font-weight: 600; }
+  .teaching-highlight { background: #fff9e6; border-left: 4px solid #f5a623; padding: 10px 14px; margin: 10px 0; border-radius: 0 6px 6px 0; }
+  .teaching-highlight .num { font-size: 22pt; font-weight: 700; color: #f5a623; }
+  .teaching-highlight .label { font-size: 10pt; color: #666; }
   @media print {
     body { background: #fff; }
     .page { box-shadow: none; margin: 0; padding: 18mm 20mm 18mm 20mm; }
@@ -111,37 +114,45 @@
     <div class="job-intent">
       <div class="title">高校教师 / 研究员</div>
       <div class="line">• <strong>研究方向：</strong>金融计量、复杂系统建模、人工智能在金融领域的应用</div>
-      <div class="line">• <strong>教学方向：</strong>计量经济学、高等数学、数学分析、金融工程</div>
+      <div class="line">• <strong>教学方向：</strong>高级计量经济学、高级宏观经济学、高级微观经济学、数理经济学、数理金融学、行为经济学、高等数学</div>
     </div>
   </div>
 
   <hr class="sep">
+
+  <div class="highlight-box">
+    <div class="box-title">🎯 可讲授的研究生及本科核心课程</div>
+    <div class="course-list">
+      <span class="course-tag">高级计量经济学</span>
+      <span class="course-tag">高级宏观经济学</span>
+      <span class="course-tag">高级微观经济学</span>
+      <span class="course-tag">数理经济学</span>
+      <span class="course-tag">数理金融学</span>
+      <span class="course-tag">行为经济学</span>
+      <span class="course-tag">高等数学</span>
+      <span class="course-tag">数学分析</span>
+      <span class="course-tag">金融工程</span>
+    </div>
+  </div>
 
   <div class="section">
     <div class="keywords">
+      <span class="keyword">计量经济学</span>
+      <span class="keyword">宏观经济学</span>
+      <span class="keyword">微观经济学</span>
+      <span class="keyword">数理金融</span>
+      <span class="keyword">行为经济</span>
       <span class="keyword">因果推断</span>
-      <span class="keyword">政策评估</span>
-      <span class="keyword">金融行为</span>
       <span class="keyword">ABM建模</span>
-      <span class="keyword">大模型应用</span>
-      <span class="keyword">贝叶斯优化</span>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-title">博士论文</div>
-    <div class="dissertation-box">
-      <div class="dissertation-title">《改善彩民结构与彩票销量的理论、实证及仿真研究》</div>
-      <div class="dissertation-meta">
-        <strong>研究领域：</strong>不确定性决策、数理金融学<br>
-        <strong>研究关键词：</strong>彩票、时间成本、贝尔曼方程、ABM仿真模拟、政策评估<br>
-        <strong>研究特色：</strong>融合理论建模、计量实证与ABM仿真三种方法<br>
-        <span class="github-link">📎 代码开源：github.com/sxjl3496-spec/The-Research-on-Improving-the-Structure-of-Lottery-Players-and-Lottery-Sales</span>
-      </div>
+  <div class="teaching-highlight">
+    <div style="display:flex; align-items:baseline; gap:12px;">
+      <span class="num">500+</span>
+      <span class="label">课时高等数学教学经验</span>
     </div>
   </div>
-
-  <hr class="sep">
 
   <div class="section">
     <div class="section-title">教学经历</div>
@@ -245,6 +256,21 @@
 
 <!-- 第三页 -->
 <div class="page">
+  <div class="section">
+    <div class="section-title">博士论文</div>
+    <div class="dissertation-box">
+      <div class="dissertation-title">《改善彩民结构与彩票销量的理论、实证及仿真研究》</div>
+      <div class="dissertation-meta">
+        <strong>研究领域：</strong>不确定性决策、数理金融学<br>
+        <strong>研究关键词：</strong>彩票、时间成本、贝尔曼方程、ABM仿真模拟、政策评估<br>
+        <strong>研究特色：</strong>融合理论建模、计量实证与ABM仿真三种方法<br>
+        <span class="github-link">📎 代码开源：github.com/sxjl3496-spec/The-Research-on-Improving-the-Structure-of-Lottery-Players-and-Lottery-Sales</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="sep">
+
   <div class="section">
     <div class="section-title">研究能力</div>
     <div class="skill-group">
