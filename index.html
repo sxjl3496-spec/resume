@@ -9,12 +9,15 @@
   @page { size: A4; margin: 15mm 18mm 15mm 18mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", "Lantinghei SC", sans-serif; font-size: 12px; line-height: 1.65; color: #2c2c2c; background: #fff; max-width: 210mm; margin: 0 auto; padding: 18mm 20mm; }
-  .resume-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 2px solid #1a73e8; }
+  .resume-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 2px solid #1a73e8; }
   .resume-header .photo { width: 68px; height: 88px; border-radius: 4px; object-fit: cover; border: 2px solid #e8eef8; flex-shrink: 0; }
   .resume-header .header-info { flex: 1; }
-  .resume-header h1 { font-size: 24px; font-weight: 700; color: #1a1a2e; letter-spacing: 3px; margin-bottom: 6px; text-align: left; }
-  .resume-header .basic-info { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 11px; color: #555; }
+  .resume-header h1 { font-size: 24px; font-weight: 700; color: #1a1a2e; letter-spacing: 3px; margin-bottom: 8px; text-align: left; }
+  .resume-header .basic-info { display: flex; flex-wrap: wrap; gap: 5px 10px; font-size: 11px; color: #444; margin-bottom: 8px; }
   .resume-header .basic-info span { white-space: nowrap; }
+  .info-tag { background: #e8f0ff; color: #1a56c4; padding: 2px 8px; border-radius: 3px; border: 1px solid #c2d7fa; font-size: 11px; }
+  .contact-info { display: flex; flex-wrap: wrap; gap: 5px 14px; font-size: 11px; color: #666; }
+  .contact-info span { white-space: nowrap; }
   .section { margin-bottom: 14px; }
   .section h2 { font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(90deg, #1a73e8 0%, #4a9eff 100%); padding: 5px 10px; border-radius: 4px 4px 0 0; letter-spacing: 1px; }
   .section .section-body { border: 1px solid #e0e7f0; border-top: none; border-radius: 0 0 6px 6px; padding: 10px 12px; background: #fafcff; }
@@ -50,11 +53,14 @@
   <div class="header-info">
     <h1>冯泽宇</h1>
     <div class="basic-info">
+      <span class="info-tag">籍贯：湖南湘潭</span>
+      <span class="info-tag">中共党员</span>
+      <span class="info-tag">西南财经大学 · 数理金融学博士</span>
+    </div>
+    <div class="contact-info">
       <span>sxjl3496@gmail.com</span>
       <span>18973253969</span>
       <span>sxjl3496</span>
-      <span>中共党员</span>
-      <span>西南财经大学 · 数理金融学博士</span>
     </div>
   </div>
 </div>
@@ -62,7 +68,7 @@
 <h1>冯泽宇 个人简历</h1>
 <h2>教育背景</h2>
 <table class="md-table"><thead><tr><th>阶段</th><th>时间</th><th>院校</th><th>专业</th><th>学位</th></tr></thead><tbody><tr><td>博士</td><td>2021.09 — 2026.06</td><td>西南财经大学 · 数学学院</td><td>数理金融学</td><td>博士</td></tr><tr><td>硕士</td><td>2017.09 — 2020.06</td><td>湘潭大学 · 应用经济学（数理经济方向）</td><td>经济学</td><td>硕士</td></tr><tr><td>本科</td><td>2013.09 — 2017.06</td><td>湖南涉外经济学院 · 金融数学</td><td>经济学</td><td>学士</td></tr></tbody></table>
-<strong>基本信息</strong>：政治面貌：中共党员 | 籍贯：湖南湘潭 | 电话：18973253969 | 微信：sxjl3496 | 邮箱：sxjl3496@gmail.com
+<strong>联系方式</strong>：电话：18973253969 | 微信：sxjl3496 | 邮箱：sxjl3496@gmail.com
 <h2>研究方向</h2>
 <strong>高校教师 / 研究员</strong>
 <ul class="md-ul">
