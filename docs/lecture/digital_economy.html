@@ -294,10 +294,9 @@
         <h1>今日内容</h1>
         <ol>
             <li>什么是数字经济？</li>
-            <li>为什么会诞生数字经济？</li>
+            <li>为什么会诞生数字经济？与传统经济的区别</li>
             <li>诞生的基础是什么？</li>
             <li>解决哪些问题？</li>
-            <li>与传统经济的区别？</li>
             <li>有哪些优劣势？</li>
         </ol>
     </div>
@@ -344,7 +343,40 @@
         </div>
     </div>
     
-    <!-- Slide 5: 诞生的基础是什么 -->
+    <!-- Slide 5: 与传统经济的区别 -->
+    <div class="slide">
+        <h1>二、为什么会诞生数字经济？（续）</h1>
+        <h2>与传统经济的核心区别</h2>
+        <table>
+            <tr>
+                <th>维度</th>
+                <th>传统经济</th>
+                <th>数字经济</th>
+            </tr>
+            <tr>
+                <td>生产要素</td>
+                <td>土地、劳动力、资本</td>
+                <td><span class="highlight">数据成为第四要素</span></td>
+            </tr>
+            <tr>
+                <td>边际成本</td>
+                <td>递增</td>
+                <td><span class="highlight">递减甚至为零</span></td>
+            </tr>
+            <tr>
+                <td>网络效应</td>
+                <td>无</td>
+                <td><span class="highlight">用户越多价值越大</span></td>
+            </tr>
+            <tr>
+                <td>组织形式</td>
+                <td>企业为主</td>
+                <td><span class="highlight">平台生态</span></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Slide 6: 诞生的基础是什么 -->
     <div class="slide">
         <h1>三、诞生的基础是什么？</h1>
         <div class="case-box">
@@ -364,7 +396,7 @@
         </div>
     </div>
     
-    <!-- Slide 6: 解决哪些问题 -->
+    <!-- Slide 7: 解决哪些问题 -->
     <div class="slide">
         <h1>四、解决哪些问题？</h1>
         <table>
@@ -396,41 +428,9 @@
         </table>
     </div>
     
-    <!-- Slide 7: 与传统经济的区别 -->
-    <div class="slide">
-        <h1>五、与传统经济的区别</h1>
-        <table>
-            <tr>
-                <th>维度</th>
-                <th>传统经济</th>
-                <th>数字经济</th>
-            </tr>
-            <tr>
-                <td>生产要素</td>
-                <td>土地、劳动力、资本</td>
-                <td><span class="highlight">数据成为第四要素</span></td>
-            </tr>
-            <tr>
-                <td>边际成本</td>
-                <td>递增</td>
-                <td><span class="highlight">递减甚至为零</span></td>
-            </tr>
-            <tr>
-                <td>网络效应</td>
-                <td>无</td>
-                <td><span class="highlight">用户越多价值越大</span></td>
-            </tr>
-            <tr>
-                <td>组织形式</td>
-                <td>企业为主</td>
-                <td><span class="highlight">平台生态</span></td>
-            </tr>
-        </table>
-    </div>
-    
     <!-- Slide 8: 有哪些优势 -->
     <div class="slide">
-        <h1>六、有哪些优势？</h1>
+        <h1>五、有哪些优势？</h1>
         <div class="two-column">
             <div class="case-box">
                 <h3>效率提升</h3>
@@ -471,7 +471,7 @@
     
     <!-- Slide 9: 有哪些劣势 -->
     <div class="slide">
-        <h1>六、有哪些劣势？（续）</h1>
+        <h1>五、有哪些劣势？</h1>
         <div class="case-box">
             <h3><span class="red">平台垄断</span></h3>
             <ul>
@@ -505,9 +505,9 @@
             <h3>数字经济的核心要点</h3>
             <ol>
                 <li><span class="highlight">定义</span>：以数据为关键生产要素的经济活动</li>
+                <li><span class="highlight">诞生原因</span>：传统经济有局限性，数字经济能更好地解决</li>
                 <li><span class="highlight">基础</span>：云计算、大数据、AI等技术支撑</li>
                 <li><span class="highlight">功能</span>：解决传统经济的效率、规模、信息问题</li>
-                <li><span class="highlight">区别</span>：数据要素、零边际成本、网络效应</li>
                 <li><span class="highlight">优劣势</span>：效率提升 vs 垄断、隐私、就业冲击</li>
             </ol>
         </div>
@@ -552,7 +552,6 @@
         const totalSlides = slides.length;
         const progress = document.getElementById('progress');
         
-        // 触摸滑动变量
         let touchStartX = 0;
         let touchEndX = 0;
         
