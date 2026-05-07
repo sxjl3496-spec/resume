@@ -16,13 +16,14 @@
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #fff;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
         
         .slide {
             display: none;
             min-height: 100vh;
-            padding: 60px 80px;
+            padding: 40px 60px;
             animation: fadeIn 0.5s ease-in-out;
         }
         
@@ -30,6 +31,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-start;
         }
         
         @keyframes fadeIn {
@@ -38,8 +40,8 @@
         }
         
         h1 {
-            font-size: 48px;
-            margin-bottom: 30px;
+            font-size: 42px;
+            margin-bottom: 25px;
             background: linear-gradient(90deg, #00d4ff, #7b2cbf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -47,25 +49,25 @@
         }
         
         h2 {
-            font-size: 36px;
-            margin-bottom: 25px;
+            font-size: 32px;
+            margin-bottom: 20px;
             color: #00d4ff;
         }
         
         h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 15px;
             color: #7b2cbf;
         }
         
         ul, ol {
-            font-size: 24px;
-            line-height: 1.8;
-            margin-left: 40px;
+            font-size: 20px;
+            line-height: 1.7;
+            margin-left: 30px;
         }
         
         li {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .highlight {
@@ -76,19 +78,19 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 22px;
+            margin: 20px 0;
+            font-size: 18px;
         }
         
         th {
             background: linear-gradient(90deg, #00d4ff, #7b2cbf);
             color: #fff;
-            padding: 15px;
+            padding: 12px;
             text-align: left;
         }
         
         td {
-            padding: 15px;
+            padding: 12px;
             border-bottom: 1px solid rgba(255,255,255,0.2);
         }
         
@@ -97,32 +99,37 @@
         }
         
         .subtitle {
-            font-size: 24px;
+            font-size: 20px;
             color: #aaa;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         
         .case-box {
             background: rgba(255,255,255,0.1);
             border-left: 4px solid #00d4ff;
-            padding: 25px;
-            margin: 20px 0;
+            padding: 20px;
+            margin: 15px 0;
             border-radius: 8px;
+            width: 100%;
         }
         
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 20px;
+            width: 100%;
         }
         
         .nav {
             position: fixed;
-            bottom: 30px;
-            right: 40px;
+            bottom: 20px;
+            right: 30px;
             color: rgba(255,255,255,0.5);
-            font-size: 16px;
+            font-size: 14px;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
         }
         
         .progress {
@@ -134,30 +141,115 @@
             transition: width 0.3s;
         }
         
-        .emoji {
-            font-size: 40px;
-            margin-right: 10px;
-        }
-        
         .title-slide {
             text-align: center;
+            align-items: center;
         }
         
         .title-slide h1 {
-            font-size: 64px;
-            margin-bottom: 40px;
+            font-size: 56px;
+            margin-bottom: 30px;
         }
         
         .title-slide .subtitle {
-            font-size: 28px;
+            font-size: 24px;
         }
         
         .thank-you {
             text-align: center;
+            align-items: center;
         }
         
         .thank-you h1 {
-            font-size: 72px;
+            font-size: 64px;
+        }
+        
+        small {
+            color: #aaa;
+            font-size: 16px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 30px 40px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 22px;
+            }
+            
+            ul, ol {
+                font-size: 18px;
+            }
+            
+            table {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px 25px;
+            }
+            
+            h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            
+            h3 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            
+            ul, ol {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-left: 20px;
+            }
+            
+            li {
+                margin-bottom: 8px;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .title-slide h1 {
+                font-size: 40px;
+            }
+            
+            .thank-you h1 {
+                font-size: 48px;
+            }
+            
+            .case-box {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -166,13 +258,13 @@
     <div class="slide active title-slide">
         <h1>数字经济学导论</h1>
         <p class="subtitle">邵阳学院面试试讲</p>
-        <p class="subtitle" style="margin-top: 40px;">冯泽宇 | 西南财经大学 数理金融学博士</p>
+        <p class="subtitle" style="margin-top: 30px;">冯泽宇 | 西南财经大学 数理金融学博士</p>
         <p class="subtitle">2026.05.08</p>
     </div>
     
     <!-- Slide 2: 内容概览 -->
     <div class="slide">
-        <h1>📝 今日内容</h1>
+        <h1>今日内容</h1>
         <ol>
             <li><span class="highlight">为什么数字经济会诞生？</span></li>
             <li><span class="highlight">数字经济与传统经济的区别</span></li>
@@ -189,7 +281,7 @@
     <div class="slide">
         <h2>传统经济的瓶颈</h2>
         <div class="case-box">
-            <h3>🔍 三大问题</h3>
+            <h3>三大问题</h3>
             <ul>
                 <li><span class="highlight">信息不对称</span> → 交易成本高</li>
                 <li><span class="highlight">资源配置效率低</span> → 市场失灵</li>
@@ -203,11 +295,11 @@
         <h2>数字经济的三个驱动力</h2>
         <ol>
             <li><span class="highlight">数据成为新生产要素</span><br>
-                <small style="color: #aaa;">2019年中央文件明确：土地、劳动力、资本、数据</small></li>
+                <small>2019年中央文件明确：土地、劳动力、资本、数据</small></li>
             <li><span class="highlight">技术突破</span><br>
-                <small style="color: #aaa;">云计算（算力）+ 大数据（数据）+ AI（智能）</small></li>
+                <small>云计算（算力）+ 大数据（数据）+ AI（智能）</small></li>
             <li><span class="highlight">商业模式创新</span><br>
-                <small style="color: #aaa;">平台经济：淘宝、微信、滴滴</small></li>
+                <small>平台经济：淘宝、微信、滴滴</small></li>
         </ol>
     </div>
     
@@ -253,7 +345,7 @@
         <h2>案例：淘宝 vs 传统商场</h2>
         <div class="two-column">
             <div class="case-box">
-                <h3>🏬 传统商场</h3>
+                <h3>传统商场</h3>
                 <ul>
                     <li>物理空间限制</li>
                     <li>营业时间限制</li>
@@ -262,7 +354,7 @@
                 </ul>
             </div>
             <div class="case-box">
-                <h3>🛒 淘宝平台</h3>
+                <h3>淘宝平台</h3>
                 <ul>
                     <li>无物理空间限制</li>
                     <li>24小时营业</li>
@@ -277,13 +369,13 @@
     <div class="slide">
         <h2>网络效应：数字经济的核心</h2>
         <div class="case-box">
-            <h3>🔄 正反馈循环</h3>
-            <p style="font-size: 24px; line-height: 1.8;">
+            <h3>正反馈循环</h3>
+            <p style="font-size: 18px; line-height: 1.6;">
                 买家越多 → 卖家越多 → 商品越丰富 → 买家越多 → ...
             </p>
         </div>
         <div class="case-box">
-            <h3>📱 案例：微信</h3>
+            <h3>案例：微信</h3>
             <ul>
                 <li>免费使用 vs 短信按条收费</li>
                 <li>功能丰富（支付、公众号、小程序）</li>
@@ -301,7 +393,7 @@
     <div class="slide">
         <h2>2026年的变化</h2>
         <div class="case-box">
-            <h3>📊 从"数据驱动"到"AI驱动"</h3>
+            <h3>从"数据驱动"到"AI驱动"</h3>
             <ul>
                 <li>数据是原材料</li>
                 <li>AI是加工工具</li>
@@ -309,7 +401,7 @@
             </ul>
         </div>
         <div class="case-box">
-            <h3>🤖 从"连接"到"智能"</h3>
+            <h3>从"连接"到"智能"</h3>
             <ul>
                 <li>过去：连接人与人、人与服务</li>
                 <li>现在：智能决策、智能生产、智能服务</li>
@@ -330,11 +422,11 @@
                 </ul>
             </div>
             <div class="case-box">
-                <h3>💼 对就业的影响</h3>
+                <h3>对就业的影响</h3>
                 <ul>
                     <li>重复性工作被替代</li>
                     <li>创造性工作增强</li>
-                    <li>新职业涌现<br><small>（提示工程师、AI训练师）</small></li>
+                    <li>新职业涌现<small>（提示工程师、AI训练师）</small></li>
                 </ul>
             </div>
         </div>
@@ -342,7 +434,7 @@
     
     <!-- Slide 13: 思考与互动 -->
     <div class="slide">
-        <h1>💭 思考与互动</h1>
+        <h1>思考与互动</h1>
         <div class="case-box">
             <h3>课堂讨论</h3>
             <ol>
@@ -362,7 +454,7 @@
     <!-- Slide 14: 结束页 -->
     <div class="slide thank-you">
         <h1>谢谢！</h1>
-        <p class="subtitle" style="margin-top: 60px;">欢迎提问</p>
+        <p class="subtitle" style="margin-top: 50px;">欢迎提问</p>
         <p class="subtitle">冯泽宇 | sxjl3496@gmail.com</p>
     </div>
     
@@ -387,6 +479,8 @@
             currentSlide = (n + totalSlides) % totalSlides;
             slides[currentSlide].classList.add('active');
             progress.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
+            // 滚动到顶部
+            window.scrollTo(0, 0);
         }
         
         // 键盘控制
@@ -409,15 +503,13 @@
         }, false);
         
         function handleSwipe() {
-            const swipeThreshold = 50; // 最小滑动距离
+            const swipeThreshold = 50;
             const diff = touchStartX - touchEndX;
             
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
-                    // 向左滑动 - 下一页
                     showSlide(currentSlide + 1);
                 } else {
-                    // 向右滑动 - 上一页
                     showSlide(currentSlide - 1);
                 }
             }
