@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冯泽宇 - 自我介绍</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: linear-gradient(135deg, #6B4C0A 0%, #B8860B 50%, #DAA520 100%);
+  color: #2d3748;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.slide {
+  display: none;
+  min-height: 100vh;
+  padding: 45px 70px;
+  animation: fadeIn 0.5s ease-out;
+}
+.slide.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.content-box {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  padding: 45px;
+  width: 100%;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #6B4C0A;
+  font-weight: 700;
+}
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #8B6914;
+  font-weight: 600;
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #6B4C0A;
+  font-weight: 600;
+}
+ul { font-size: 18px; line-height: 1.85; margin-left: 25px; color: #4a5568; }
+li { margin-bottom: 10px; }
+.hl { color: #6B4C0A; font-weight: 600; }
+.gold { color: #B8860B; font-weight: 600; }
+.sub { font-size: 19px; color: #718096; margin-top: 12px; line-height: 1.6; }
+.num {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #6B4C0A, #B8860B);
+  color: #fff; min-width: 36px; height: 36px; padding: 0 10px;
+  border-radius: 8px; font-size: 16px; font-weight: 700; margin-right: 12px;
+}
+.card {
+  background: linear-gradient(135deg, #FFFDF5 0%, #FFF8E7 100%);
+  border-left: 4px solid #DAA520;
+  padding: 22px; margin: 18px 0; border-radius: 10px;
+}
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 20px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 20px; }
+.advantage-card {
+  background: linear-gradient(135deg, #FFFDF5, #FFFFFF);
+  border: 1px solid #E8D48A;
+  border-left: 3px solid #DAA520;
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.advantage-card .card-title { font-weight: 700; color: #8B6914; font-size: 16px; margin-bottom: 6px; }
+.advantage-card .card-desc { color: #444; font-size: 15px; line-height: 1.5; }
+.title-slide { text-align: center; align-items: center; }
+.title-slide .content-box { padding: 60px; text-align: center; }
+.title-slide h1 {
+  font-size: 52px;
+  background: linear-gradient(135deg, #6B4C0A 0%, #B8860B 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.end-slide { text-align: center; align-items: center; }
+.end-slide .content-box { padding: 60px; text-align: center; }
+.end-slide h1 {
+  font-size: 48px;
+  background: linear-gradient(135deg, #6B4C0A 0%, #B8860B 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.nav {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  background: rgba(107,76,10,0.85); color: #fff; padding: 10px 18px;
+  border-radius: 25px; font-size: 14px; z-index: 100;
+  backdrop-filter: blur(8px);
+}
+.progress {
+  position: fixed; bottom: 0; left: 0; height: 4px;
+  background: rgba(255,255,255,0.9); transition: width 0.3s;
+}
+@media (max-width: 768px) {
+  .slide { padding: 22px 18px; }
+  .content-box { padding: 22px; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+  .grid2, .grid3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Slide 1: 封面 -->
+<div class="slide active title-slide">
+  <div class="content-box">
+    <h1>个人自我介绍</h1>
+    <p class="sub" style="margin-top: 30px; font-size: 22px;">冯泽宇</p>
+    <p class="sub">西南财经大学 数理金融学博士</p>
+    <p class="sub" style="margin-top: 20px; font-size: 18px;">应聘：邵阳学院经济与管理学院</p>
+    <p class="sub" style="font-size: 16px;">2026.05.08</p>
+  </div>
+</div>
+
+<!-- Slide 2: 教育背景 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>我是谁</h1>
+    <h2>教育背景</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3><span class="num">1</span>本科</h3>
+        <ul>
+          <li><span class="hl">湖南涉外经济学院</span></li>
+          <li>金融数学 · 学士</li>
+          <li>2013–2017</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="num">2</span>硕士</h3>
+        <ul>
+          <li><span class="hl">湘潭大学</span></li>
+          <li>应用经济学（数理经济方向）· 硕士</li>
+          <li>2017–2020</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="num">3</span>博士</h3>
+        <ul>
+          <li><span class="hl">西南财经大学</span></li>
+          <li>数理金融学 · 博士</li>
+          <li>2021–2026</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 20px;">
+      <p style="font-size: 17px; line-height: 1.7;">
+        <span class="gold">核心定位</span>：本科<span class="hl">金融数学</span> → 硕士<span class="hl">应用经济学</span> → 博士<span class="hl">数理金融学</span>，<br>
+        形成了<span class="gold">数学 × 经济学 × 计算机</span>的完整交叉学科训练体系
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3: 教学能力 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>我能教什么</h1>
+    <h2>教学能力与经历</h2>
+    <div class="card">
+      <h3>教学经历（累计500+课时）</h3>
+      <ul>
+        <li><span class="hl">湖南科技大学</span>（2025.09–2026.01）：外国语学院外聘教师，讲授高等数学</li>
+        <li><span class="hl">西南财经大学</span>（2022.09–2025.02）：数学分析、高等数学教学助理</li>
+        <li><span class="hl">成都中医药大学</span>（2022–2024）：外聘教师，讲授高等数学</li>
+        <li><span class="hl">文都教育集团</span>（2017–2020）：授课教师，考研数学、经济学</li>
+      </ul>
+    </div>
+    <div class="grid2" style="margin-top: 15px;">
+      <div class="card">
+        <h3>可授课程</h3>
+        <ul>
+          <li>高等数学、数学分析、线性代数、概率论与数理统计</li>
+          <li>计量经济学、数理经济学</li>
+          <li>微观经济学、宏观经济学</li>
+          <li>行为经济学、金融学</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>教学理念</h3>
+        <ul>
+          <li>注重从数理模型推导经济直觉</li>
+          <li>帮助学生建立建模思维</li>
+          <li>理论与实践结合，兼顾方法论与工具实现</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4: 学术成果 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>我的研究</h1>
+    <h2>学术成果与研究方向</h2>
+    <div class="card">
+      <h3>博士论文</h3>
+      <p style="font-size: 17px; line-height: 1.7;">
+        <span class="hl">《改善彩民结构与彩票销量的理论、实证及仿真研究》</span><br>
+        构建动态优化与因果推断相结合的分析框架，融合理论建模、计量实证与仿真模拟三种方法
+      </p>
+    </div>
+    <div class="card">
+      <h3>已发表论文（3篇）</h3>
+      <ul>
+        <li>Zeyu Feng. Impact of Online Lottery Sales Prohibition on the Structure of Lottery Consumers [<span class="gold">PLOS ONE</span>, 2025, SCI]</li>
+        <li>刘亚军, 冯泽宇. 农产品电商上行的包容性商业模式构建策略仿真研究 [<span class="gold">湘潭大学学报</span>, 2023, CSSCI]</li>
+        <li>吴朝霞, 冯泽宇. 排污权交易政策对不同规模企业的影响研究 [<span class="gold">产业经济评论</span>, 2021, CSSCI]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>研究方法</h3>
+      <ul>
+        <li><span class="hl">理论建模</span>：动态优化、Bellman方程、跨期决策</li>
+        <li><span class="hl">计量实证</span>：因果推断（PSM-DID、RDD、DDD）、面板数据建模</li>
+        <li><span class="hl">仿真模拟</span>：Agent-Based Modeling、Monte Carlo</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5: 综合优势 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>我能带来什么</h1>
+    <h2>综合优势</h2>
+    <div class="grid2">
+      <div class="advantage-card">
+        <div class="card-title">深厚的数理功底</div>
+        <div class="card-desc">本硕博三阶段金融数学→数理经济→数理金融的完整训练，数学学院博士背景，可胜任本科及研究生数学类课程教学</div>
+      </div>
+      <div class="advantage-card">
+        <div class="card-title">丰富的教学实战</div>
+        <div class="card-desc">累计500+课时高校授课经验，涵盖湖南科技大学、西南财经大学、成都中医药大学等多所高校，可快速承担核心课程教学</div>
+      </div>
+      <div class="advantage-card">
+        <div class="card-title">跨学科融合视野</div>
+        <div class="card-desc">数学+经济学+计算机的交叉背景，契合经济与管理学院经济学、管理科学与工程等多学科发展方向</div>
+      </div>
+      <div class="advantage-card">
+        <div class="card-title">扎实的研究能力</div>
+        <div class="card-desc">3篇SCI/CSSCI论文已发表，具备独立开展高质量学术研究的能力，可为学院科研贡献力量</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 6: 致谢过渡 -->
+<div class="slide end-slide">
+  <div class="content-box">
+    <h1>接下来</h1>
+    <p class="sub" style="margin-top: 30px; font-size: 22px;">试讲内容：推开数字经济大门</p>
+    <p class="sub" style="font-size: 18px;">从"衣食住行"看懂新经济</p>
+    <p class="sub" style="margin-top: 35px; font-size: 16px; color: #a0aec0;">冯泽宇 | 2026.05.08</p>
+  </div>
+</div>
+
+<div class="nav">← 左滑上一页 | 右滑下一页 →</div>
+<div class="progress" id="progress"></div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const progress = document.getElementById('progress');
+let touchStartX = 0, touchEndX = 0;
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (n + totalSlides) % totalSlides;
+  slides[currentSlide].classList.add('active');
+  progress.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') showSlide(currentSlide + 1);
+  else if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+});
+
+document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, false);
+document.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  if (Math.abs(touchStartX - touchEndX) > 50) {
+    showSlide(currentSlide + (touchStartX > touchEndX ? 1 : -1));
+  }
+}, false);
+
+progress.style.width = (1 / totalSlides * 100) + '%';
+</script>
+</body>
+</html>

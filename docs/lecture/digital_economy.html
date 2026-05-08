@@ -1,800 +1,405 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>推开数字经济大门 - 冯泽宇</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #2d3748;
-            min-height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-        
-        .slide {
-            display: none;
-            min-height: 100vh;
-            padding: 45px 70px;
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        .slide.active {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .content-box {
-            background: rgba(255, 255, 255, 0.97);
-            border-radius: 16px;
-            padding: 45px;
-            width: 100%;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-        }
-        
-        h1 {
-            font-size: 42px;
-            margin-bottom: 30px;
-            color: #1e3c72;
-            font-weight: 700;
-        }
-        
-        h2 {
-            font-size: 26px;
-            margin-bottom: 20px;
-            color: #2a5298;
-            font-weight: 600;
-        }
-        
-        h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #1e3c72;
-            font-weight: 600;
-        }
-        
-        h4 {
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: #2a5298;
-            font-weight: 600;
-        }
-        
-        .num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            min-width: 36px;
-            height: 36px;
-            padding: 0 10px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 700;
-            margin-right: 12px;
-        }
-        
-        ul, ol {
-            font-size: 18px;
-            line-height: 1.85;
-            margin-left: 25px;
-            color: #4a5568;
-        }
-        
-        li { margin-bottom: 10px; }
-        
-        .hl { color: #1e3c72; font-weight: 600; }
-        .green { color: #38a169; font-weight: 600; }
-        .red { color: #e53e3e; font-weight: 600; }
-        .blue { color: #3182ce; font-weight: 600; }
-        .orange { color: #ed8936; font-weight: 600; }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        
-        th {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            padding: 12px 10px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 15px;
-        }
-        
-        td {
-            padding: 11px 10px;
-            border-bottom: 1px solid #e2e8f0;
-            color: #4a5568;
-            font-size: 15px;
-        }
-        
-        tr:last-child td { border-bottom: none; }
-        tr:nth-child(even) { background: #f7fafc; }
-        
-        .sub {
-            font-size: 19px;
-            color: #718096;
-            margin-top: 12px;
-            line-height: 1.6;
-        }
-        
-        .card {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            border-left: 4px solid #2a5298;
-            padding: 22px;
-            margin: 18px 0;
-            border-radius: 10px;
-        }
-        
-        .card2 {
-            background: linear-gradient(135deg, #ebf8ff 0%, #e6f7ff 100%);
-            border-left: 4px solid #3182ce;
-            padding: 22px;
-            margin: 18px 0;
-            border-radius: 10px;
-        }
-        
-        .card3 {
-            background: linear-gradient(135deg, #f0fff4 0%, #e6ffed 100%);
-            border-left: 4px solid #38a169;
-            padding: 22px;
-            margin: 18px 0;
-            border-radius: 10px;
-        }
-        
-        .card4 {
-            background: linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%);
-            border-left: 4px solid #ed8936;
-            padding: 22px;
-            margin: 18px 0;
-            border-radius: 10px;
-        }
-        
-        .grid2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
-            margin-top: 20px;
-        }
-        
-        .grid3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 18px;
-            margin-top: 20px;
-        }
-        
-        .grid4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-top: 20px;
-        }
-        
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-        
-        .intro-box {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 22px;
-            border-radius: 10px;
-        }
-        
-        .def-box {
-            background: linear-gradient(135deg, #ebf8ff 0%, #e6f7ff 100%);
-            border: 2px solid #3182ce;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 12px;
-        }
-        
-        .def-box p {
-            font-size: 17px;
-            line-height: 1.75;
-            color: #2d3748;
-        }
-        
-        .def-box .source {
-            font-size: 13px;
-            color: #718096;
-            margin-top: 10px;
-            font-style: italic;
-        }
-        
-        .ask-box {
-            background: linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%);
-            border: 2px solid #ed8936;
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 12px;
-        }
-        
-        .ask-box p {
-            font-size: 20px;
-            line-height: 1.85;
-            color: #2d3748;
-        }
-        
-        .nav {
-            position: fixed;
-            bottom: 22px;
-            right: 30px;
-            color: rgba(255,255,255,0.85);
-            font-size: 14px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(8px);
-            padding: 10px 18px;
-            border-radius: 25px;
-        }
-        
-        .progress {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background: rgba(255,255,255,0.9);
-            transition: width 0.3s;
-        }
-        
-        .title-slide { text-align: center; align-items: center; }
-        .title-slide .content-box { padding: 60px; text-align: center; }
-        .title-slide h1 {
-            font-size: 52px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .title-slide .sub { font-size: 22px; }
-        
-        .end-slide { text-align: center; align-items: center; }
-        .end-slide .content-box { padding: 60px; text-align: center; }
-        .end-slide h1 {
-            font-size: 58px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .toc {
-            display: flex;
-            align-items: center;
-            margin: 16px 0;
-            font-size: 22px;
-            padding: 14px 18px;
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            border-radius: 10px;
-        }
-        
-        .toc-num {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            width: 44px;
-            height: 44px;
-            line-height: 44px;
-            text-align: center;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 700;
-            margin-right: 18px;
-        }
-        
-        small { color: #a0aec0; font-size: 14px; }
-        
-        @media (max-width: 1100px) {
-            .slide { padding: 35px 50px; }
-            .content-box { padding: 35px; }
-            h1 { font-size: 36px; }
-            h2 { font-size: 24px; }
-            h3 { font-size: 18px; }
-            ul, ol { font-size: 17px; }
-            table { font-size: 14px; }
-            .grid4 { grid-template-columns: 1fr 1fr; }
-        }
-        
-        @media (max-width: 768px) {
-            .slide { padding: 22px 18px; }
-            .content-box { padding: 22px; border-radius: 12px; }
-            h1 { font-size: 28px; margin-bottom: 20px; }
-            h2 { font-size: 20px; margin-bottom: 15px; }
-            h3 { font-size: 16px; margin-bottom: 10px; }
-            ul, ol { font-size: 15px; line-height: 1.7; margin-left: 18px; }
-            li { margin-bottom: 8px; }
-            table { font-size: 13px; }
-            th, td { padding: 8px; }
-            .grid2, .grid3, .grid4, .intro-grid { grid-template-columns: 1fr; gap: 12px; }
-            .title-slide h1 { font-size: 36px; }
-            .title-slide .content-box, .end-slide .content-box { padding: 35px; }
-            .end-slide h1 { font-size: 42px; }
-            .card, .card2, .card3, .card4, .def-box, .ask-box, .intro-box { padding: 16px; }
-            .def-box p, .ask-box p { font-size: 16px; }
-            .toc { font-size: 18px; padding: 10px 12px; }
-            .toc-num { width: 36px; height: 36px; line-height: 36px; font-size: 15px; margin-right: 12px; }
-            .num { min-width: 30px; height: 30px; font-size: 14px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>推开数字经济大门 - 冯泽宇</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #2d3748;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.slide {
+  display: none;
+  min-height: 100vh;
+  padding: 45px 70px;
+  animation: fadeIn 0.5s ease-out;
+}
+.slide.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.content-box {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  padding: 45px;
+  width: 100%;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+h1 { font-size: 42px; margin-bottom: 30px; color: #1e3c72; font-weight: 700; }
+h2 { font-size: 26px; margin-bottom: 20px; color: #2a5298; font-weight: 600; }
+h3 { font-size: 20px; margin-bottom: 15px; color: #1e3c72; font-weight: 600; }
+ul { font-size: 18px; line-height: 1.85; margin-left: 25px; color: #4a5568; }
+li { margin-bottom: 10px; }
+.hl { color: #1e3c72; font-weight: 600; }
+.green { color: #38a169; font-weight: 600; }
+.red { color: #e53e3e; font-weight: 600; }
+.blue { color: #3182ce; font-weight: 600; }
+.orange { color: #ed8936; font-weight: 600; }
+.sub { font-size: 19px; color: #718096; margin-top: 12px; line-height: 1.6; }
+.card {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-left: 4px solid #2a5298;
+  padding: 22px; margin: 18px 0; border-radius: 10px;
+}
+.card2 {
+  background: linear-gradient(135deg, #ebf8ff 0%, #e6f7ff 100%);
+  border-left: 4px solid #3182ce;
+  padding: 22px; margin: 18px 0; border-radius: 10px;
+}
+.card3 {
+  background: linear-gradient(135deg, #f0fff4 0%, #e6ffed 100%);
+  border-left: 4px solid #38a169;
+  padding: 22px; margin: 18px 0; border-radius: 10px;
+}
+.card4 {
+  background: linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%);
+  border-left: 4px solid #ed8936;
+  padding: 22px; margin: 18px 0; border-radius: 10px;
+}
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 20px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 20px; }
+.ask-box {
+  background: linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%);
+  border: 2px solid #ed8936;
+  padding: 25px; margin: 20px 0; border-radius: 12px;
+}
+.ask-box p { font-size: 18px; line-height: 1.8; color: #2d3748; }
+.def-box {
+  background: linear-gradient(135deg, #ebf8ff 0%, #e6f7ff 100%);
+  border: 2px solid #3182ce;
+  padding: 20px; margin: 15px 0; border-radius: 12px;
+}
+.def-box p { font-size: 17px; line-height: 1.75; color: #2d3748; }
+.title-slide { text-align: center; align-items: center; }
+.title-slide .content-box { padding: 60px; text-align: center; }
+.title-slide h1 {
+  font-size: 52px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.end-slide { text-align: center; align-items: center; }
+.end-slide .content-box { padding: 60px; text-align: center; }
+.end-slide h1 {
+  font-size: 48px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.flow-arrow {
+  text-align: center; font-size: 28px; color: #2a5298;
+  margin: 10px 0; font-weight: 700;
+}
+.case-box {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border: 2px solid #2a5298;
+  padding: 25px; margin: 15px 0; border-radius: 12px;
+}
+.nav {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  background: rgba(30,60,114,0.85); color: #fff; padding: 10px 18px;
+  border-radius: 25px; font-size: 14px; z-index: 100;
+  backdrop-filter: blur(8px);
+}
+.progress {
+  position: fixed; bottom: 0; left: 0; height: 4px;
+  background: rgba(255,255,255,0.9); transition: width 0.3s;
+}
+@media (max-width: 768px) {
+  .slide { padding: 22px 18px; }
+  .content-box { padding: 22px; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+  .grid2, .grid3 { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-    <!-- Slide 1: 标题页 -->
-    <div class="slide active title-slide">
-        <div class="content-box">
-            <h1>推开数字经济大门</h1>
-            <p class="sub">从"衣食住行"看懂新经济：数字经济的诞生、逻辑与未来</p>
-            <p class="sub" style="margin-top: 35px;">报告人：冯泽宇</p>
-            <p class="sub">西南财经大学 数理金融学博士</p>
-            <p class="sub" style="margin-top: 28px; font-size: 17px;">2026.05.08</p>
-        </div>
+
+<!-- Slide 1: 封面 -->
+<div class="slide active title-slide">
+  <div class="content-box">
+    <h1>推开数字经济大门</h1>
+    <p class="sub">从"衣食住行"看懂新经济</p>
+    <p class="sub" style="margin-top: 35px;">主讲人：冯泽宇</p>
+    <p class="sub" style="font-size: 17px; margin-top: 20px;">2026.05.08</p>
+  </div>
+</div>
+
+<!-- Slide 2: 互动导入 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>我们身边的数字经济</h1>
+    <div class="ask-box">
+      <h3>先问大家两个问题</h3>
+      <p>
+        你上一次用<span class="hl">现金</span>买东西是什么时候？<br>
+        上一次在路边<span class="hl">招手打车</span>又是什么时候？
+      </p>
     </div>
-    
-    <!-- Slide 2: 个人简介 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>报告人简介</h1>
-            <div class="intro-grid">
-                <div class="intro-box">
-                    <h3>基本信息</h3>
-                    <ul>
-                        <li><span class="hl">姓名</span>：冯泽宇</li>
-                        <li><span class="hl">籍贯</span>：湖南湘潭</li>
-                        <li><span class="hl">政治面貌</span>：中共党员</li>
-                        <li><span class="hl">学历</span>：西南财经大学 数理金融学博士</li>
-                    </ul>
-                </div>
-                <div class="intro-box">
-                    <h3>研究方向</h3>
-                    <ul>
-                        <li><span class="hl">核心定位</span>：金融计量 × 仿真优化 × 机器学习</li>
-                        <li><span class="hl">研究特色</span>：融合理论建模、计量实证与ABM仿真</li>
-                        <li><span class="hl">代码开源</span>：github.com/sxjl3496-spec</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="intro-box" style="margin-top: 22px;">
-                <h3>教学能力</h3>
-                <ul>
-                    <li><span class="hl">核心课程</span>：计量经济学、计算经济学、经济仿真与建模</li>
-                    <li><span class="hl">教学理念</span>：注重从数理模型推导经济直觉，帮助学生建立建模思维</li>
-                    <li><span class="hl">授课经验</span>：500+小时高校授课经验</li>
-                </ul>
-            </div>
-        </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>十年前的日常</h3>
+        <ul>
+          <li>去商场排队购物</li>
+          <li>钱包里装着现金和零钱</li>
+          <li>路边等出租车，看运气</li>
+          <li>去银行柜台办业务</li>
+        </ul>
+      </div>
+      <div class="card2">
+        <h3>今天的日常</h3>
+        <ul>
+          <li>直播间下单，次日到家</li>
+          <li>一部手机走遍天下</li>
+          <li>手机叫车，3分钟到楼下</li>
+          <li>转账理财，指尖完成</li>
+        </ul>
+      </div>
     </div>
-    
-    <!-- Slide 3: 互动导入 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>我们身边的数字经济</h1>
-            <div class="ask-box">
-                <h3>互动提问</h3>
-                <p>
-                    您上一次使用<span class="hl">现金</span>是什么时候？<br>
-                    上一次在路边<span class="hl">招手打车</span>又是什么时候？
-                </p>
-            </div>
-            <div class="grid2">
-                <div class="card">
-                    <h3>传统经济模式</h3>
-                    <ul>
-                        <li>排队购物</li>
-                        <li>现金支付</li>
-                        <li>路边打车</li>
-                        <li>银行柜台办理业务</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>数字经济模式</h3>
-                    <ul>
-                        <li>直播带货</li>
-                        <li>扫码支付</li>
-                        <li>网约车</li>
-                        <li>手机银行</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="sub" style="margin-top: 18px;">数字经济已像水和电一样，成为现代生活的"基础设施"</p>
-        </div>
+    <p class="sub" style="margin-top: 18px; font-size: 17px; color: #1e3c72; font-weight: 600;">
+      这不是简单的"方便了"——背后是一整套新的经济逻辑在运转
+    </p>
+  </div>
+</div>
+
+<!-- Slide 3: 什么是数字经济 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>什么是数字经济？</h1>
+
+    <div class="def-box">
+      <p style="font-size: 20px; text-align: center; line-height: 1.8;">
+        以<span class="hl">数据</span>为核心生产要素，以<span class="hl">数字技术</span>为核心驱动力，<br>
+        通过技术与<span class="hl">实体经济深度融合</span>产生的新型经济形态
+      </p>
+      <p style="text-align: center; font-size: 13px; color: #718096; margin-top: 10px;">
+        ——综合G20杭州峰会、中国信通院、国家统计局三个权威定义
+      </p>
     </div>
-    
-    <!-- Slide 4: 什么是数字经济 - 三个定义 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>数字经济是什么？</h1>
-            <h2>三个权威定义</h2>
-            
-            <div class="def-box">
-                <h4><span class="num">1</span>2016年G20杭州峰会定义</h4>
-                <p>以使用<span class="hl">数字化的知识和信息</span>作为关键生产要素、以<span class="hl">现代信息网络</span>作为重要载体、以<span class="hl">信息通信技术</span>的有效使用作为效率提升和经济结构优化的重要推动力的一系列经济活动。</p>
-                <p class="source">——《二十国集团数字经济发展与合作倡议》</p>
-            </div>
-            
-            <div class="def-box">
-                <h4><span class="num">2</span>中国信通院定义</h4>
-                <p>以数字化的知识和信息作为关键生产要素，以<span class="hl">数字技术为核心驱动力量</span>，以现代信息网络为重要载体，通过数字技术与实体经济深度融合，不断提高经济社会的数字化、网络化、智能化水平，加速重构经济发展与治理模式的新型经济形态。</p>
-                <p class="source">——《中国数字经济发展白皮书》</p>
-            </div>
-            
-            <div class="def-box">
-                <h4><span class="num">3</span>国家统计局定义</h4>
-                <p>以<span class="hl">数据资源</span>作为关键生产要素、以现代信息网络作为重要载体、以信息通信技术的有效使用作为效率提升和经济结构优化的重要推动力的一系列经济活动。</p>
-                <p class="source">——《数字经济及其核心产业统计分类（2021）》</p>
-            </div>
-        </div>
+
+    <div class="grid3" style="margin-top: 20px;">
+      <div class="card2">
+        <h3 style="font-size: 17px;"><span class="blue">关键要素</span></h3>
+        <p style="font-size: 16px; color: #4a5568;">数据<br><span style="font-size: 14px; color: #718096;">取代土地、劳动力、资本，成为新的"石油"</span></p>
+      </div>
+      <div class="card2">
+        <h3 style="font-size: 17px;"><span class="blue">核心驱动</span></h3>
+        <p style="font-size: 16px; color: #4a5568;">数字技术<br><span style="font-size: 14px; color: #718096;">互联网、AI、云计算、5G</span></p>
+      </div>
+      <div class="card2">
+        <h3 style="font-size: 17px;"><span class="blue">本质特征</span></h3>
+        <p style="font-size: 16px; color: #4a5568;">深度融合<br><span style="font-size: 14px; color: #718096;">不是替代传统行业，而是改造升级</span></p>
+      </div>
     </div>
-    
-    <!-- Slide 5: 三个定义的共同点 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>三个定义的共同点</h1>
-            
-            <div class="card">
-                <h3>共同点一：数据是关键生产要素</h3>
-                <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
-                    都强调数字经济是以<span class="hl">数据</span>作为关键生产要素的经济活动。<br>
-                    国家统计局将"数字化的知识和信息"明确界定为"<span class="hl">数据资源</span>"
-                </p>
-            </div>
-            
-            <div class="card">
-                <h3>共同点二：技术基础是数字技术和现代信息网络</h3>
-                <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
-                    强调了<span class="hl">数字技术</span>和<span class="hl">现代信息网络</span>的技术基础<br>
-                    信通院进一步强调"数字技术为核心驱动力量"
-                </p>
-            </div>
-            
-            <div class="card">
-                <h3>共同点三：本质是技术与实体经济的深度融合</h3>
-                <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
-                    数字经济本质上是<span class="hl">新技术的应用</span>和<span class="hl">与实体经济深度融合</span>基础上产生的经济形态<br>
-                    是重塑经济结构与社会运行方式的深刻变革
-                </p>
-            </div>
-        </div>
+
+    <div class="card" style="margin-top: 20px;">
+      <p style="font-size: 17px; color: #1e3c72; font-weight: 600;">
+        我的理解：数字经济的核心不是"数字"，而是数据成为生产要素后，经济运行逻辑的根本性改变
+      </p>
     </div>
-    
-    <!-- Slide 6: 数字经济构成 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>数字经济的构成</h1>
-            <h2>两大核心部分</h2>
-            
-            <div class="grid2">
-                <div class="card3">
-                    <h3><span class="green">数字产业化</span></h3>
-                    <p style="font-size: 16px; color: #4a5568; margin-bottom: 12px;">数字技术的直接应用所形成的<span class="hl">先导产业</span></p>
-                    <ul>
-                        <li>5G、人工智能</li>
-                        <li>工业互联网、高端芯片</li>
-                        <li>云计算、大数据</li>
-                        <li>高端工业软件</li>
-                    </ul>
-                    <p style="font-size: 14px; color: #38a169; margin-top: 10px;">→ 构成数字化转型的基础</p>
-                </div>
-                
-                <div class="card4">
-                    <h3><span class="orange">产业数字化</span></h3>
-                    <p style="font-size: 16px; color: #4a5568; margin-bottom: 12px;">传统产业使用数字技术带来的<span class="hl">产出增加和效率提升</span></p>
-                    <ul>
-                        <li>智能制造</li>
-                        <li>智慧农业</li>
-                        <li>数字金融</li>
-                        <li>智慧物流</li>
-                    </ul>
-                    <p style="font-size: 14px; color: #ed8936; margin-top: 10px;">→ 数字经济发展的主要方向</p>
-                </div>
-            </div>
-            
-            <div class="card2" style="margin-top: 20px;">
-                <h3>中国数字经济数据（2021年）</h3>
-                <ul>
-                    <li>数字经济增加值：<span class="hl">45.5万亿元</span>，占GDP约<span class="hl">40%</span></li>
-                    <li>产业数字化增加值：<span class="hl">37.18万亿元</span>，占数字经济<span class="hl">81.7%</span></li>
-                    <li>数字产业化增加值：<span class="hl">8.35万亿元</span></li>
-                </ul>
-                <p style="font-size: 14px; color: #718096; margin-top: 10px;">数据来源：中国信息通信研究院《中国数字经济发展报告（2022年）》</p>
-            </div>
-        </div>
+  </div>
+</div>
+
+<!-- Slide 4: 为什么诞生 — 案例页 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>数字经济是怎么来的？</h1>
+    <h2>从路边打车到网约车</h2>
+
+    <div class="case-box">
+      <h3 style="color: #e53e3e;">传统打车的困境</h3>
+      <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
+        你在路边等了15分钟，一辆空出租车从你身后50米开过，拐进了另一条街。<br>
+        司机也在找你——他绕了三圈，没看到有人招手，最后空驶回去了。<br>
+        <span class="red">问题出在哪？信息不对称。</span>乘客不知道车在哪，司机不知道客在哪。
+      </p>
     </div>
-    
-    <!-- Slide 7: 数字经济产业分类 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>数字经济产业分类</h1>
-            <h2>国家统计局五大分类（2021年）</h2>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 22%;">类别</th>
-                        <th style="width: 39%;">主要内容</th>
-                        <th style="width: 39%;">典型例子</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="hl">数字产品制造业</span></td>
-                        <td>计算机制造、通讯设备制造、数字媒体设备制造、电子元器件制造等</td>
-                        <td>芯片、服务器、5G设备</td>
-                    </tr>
-                    <tr>
-                        <td><span class="hl">数字产品服务业</span></td>
-                        <td>数字产品批发、零售、租赁、维修等</td>
-                        <td>电子产品销售、维修服务</td>
-                    </tr>
-                    <tr>
-                        <td><span class="hl">数字技术应用业</span></td>
-                        <td>软件开发、互联网相关服务、信息技术服务等</td>
-                        <td>软件企业、云服务商</td>
-                    </tr>
-                    <tr>
-                        <td><span class="hl">数字要素驱动业</span></td>
-                        <td>互联网平台、数字内容与媒体、互联网金融等</td>
-                        <td>电商平台、支付平台</td>
-                    </tr>
-                    <tr>
-                        <td><span class="hl">数字化效率提升业</span></td>
-                        <td>智慧农业、智能制造、智能交通、数字政府等</td>
-                        <td>工业互联网、智慧城市</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="card" style="margin-top: 18px;">
-                <p style="font-size: 16px; color: #4a5568;">
-                    <span class="hl">前四类</span>属于<span class="blue">数字经济核心产业</span>（对应数字产业化）<br>
-                    <span class="hl">第五类</span>代表<span class="orange">产业数字化</span>部分
-                </p>
-            </div>
-        </div>
+
+    <div class="flow-arrow">↓ 数据 + 算力 + 算法 ↓</div>
+
+    <div class="case-box" style="border-color: #38a169;">
+      <h3 style="color: #38a169;">网约车的解决</h3>
+      <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
+        你打开手机，GPS定位告诉平台你在哪；周围司机的位置也实时上传。<br>
+        <span class="green">算法</span>在毫秒内完成匹配：最近的司机、最优的路线、预计的价格——全部透明。<br>
+        结果：等车时间从平均15分钟降到3分钟，司机空驶率降低30%以上。
+      </p>
     </div>
-    
-    <!-- Slide 8: 为何诞生 - 痛点 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>为何诞生数字经济？</h1>
-            <h2>解决传统经济痛点</h2>
-            <div class="grid3">
-                <div class="card">
-                    <h3><span class="red">痛点一</span><br>信息不对称</h3>
-                    <p style="font-size: 16px; color: #4a5568;">买卖双方信息不互通，交易效率低下</p>
-                    <p style="font-size: 14px; color: #38a169; margin-top: 8px;">✓ 数字经济：电商平台让信息透明</p>
-                </div>
-                <div class="card">
-                    <h3><span class="red">痛点二</span><br>交易成本高</h3>
-                    <p style="font-size: 16px; color: #4a5568;">产业链条长，中间环节多</p>
-                    <p style="font-size: 14px; color: #38a169; margin-top: 8px;">✓ 数字经济：去中介化，直接连接</p>
-                </div>
-                <div class="card">
-                    <h3><span class="red">痛点三</span><br>效率低下</h3>
-                    <p style="font-size: 16px; color: #4a5568;">人工处理，流程繁琐</p>
-                    <p style="font-size: 14px; color: #38a169; margin-top: 8px;">✓ 数字经济：算法自动化，高效匹配</p>
-                </div>
-            </div>
-        </div>
+
+    <div class="card" style="margin-top: 15px;">
+      <p style="font-size: 17px; color: #1e3c72; font-weight: 600;">
+        这不是简单的"线上化"——是数据重新定义了供需匹配的经济学机制
+      </p>
     </div>
-    
-    <!-- Slide 9: 诞生的三驾马车 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>诞生的三驾马车</h1>
-            <h2>新时代经济的三大核心生产要素</h2>
-            <div class="grid3">
-                <div class="card2">
-                    <h3><span class="hl">新石油</span><br>数据</h3>
-                    <ul>
-                        <li>万物皆可数字化</li>
-                        <li>数据成为新资源、新财富</li>
-                        <li>价值创造的源头</li>
-                    </ul>
-                </div>
-                <div class="card2">
-                    <h3><span class="hl">新引擎</span><br>算力</h3>
-                    <ul>
-                        <li>芯片技术发展</li>
-                        <li>云计算提供强大动力</li>
-                        <li>数字经济运行的物理基础</li>
-                    </ul>
-                </div>
-                <div class="card2">
-                    <h3><span class="hl">新道路</span><br>算法与网络</h3>
-                    <ul>
-                        <li>5G让数据"跑得快"</li>
-                        <li>AI让数据"用得好"</li>
-                        <li>"高速公路"与"智慧大脑"</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  </div>
+</div>
+
+<!-- Slide 5: 效率视角 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>数字经济改变了什么？</h1>
+    <h2>核心逻辑：效率提升</h2>
+
+    <div class="grid2">
+      <div class="card3">
+        <h3><span class="green">数字产业化</span>——技术本身的效率</h3>
+        <p style="font-size: 16px; color: #4a5568; margin-bottom: 10px;">数字技术直接形成的产业</p>
+        <ul>
+          <li>5G让数据传输速度提升100倍</li>
+          <li>云计算让算力像水电一样随取随用</li>
+          <li>AI大模型让机器开始"理解"人类语言</li>
+        </ul>
+        <p style="font-size: 14px; color: #38a169; margin-top: 10px;">→ 这是数字经济的"发动机"</p>
+      </div>
+      <div class="card4">
+        <h3><span class="orange">产业数字化</span>——传统行业的效率</h3>
+        <p style="font-size: 16px; color: #4a5568; margin-bottom: 10px;">用数字技术改造传统产业</p>
+        <ul>
+          <li>工厂质检：从人眼1件/秒 → AI摄像头1000件/秒</li>
+          <li>农田灌溉：从凭经验 → 传感器自动调控</li>
+          <li>银行风控：从人工审核 → 算法秒级评估</li>
+        </ul>
+        <p style="font-size: 14px; color: #ed8936; margin-top: 10px;">→ 这是数字经济的"主战场"</p>
+      </div>
     </div>
-    
-    <!-- Slide 10: 数字经济研究什么 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>数字经济研究什么？</h1>
-            <h2>三大核心问题</h2>
-            <div class="grid3">
-                <div class="card">
-                    <h3><span class="blue">效率之问</span><br>如何把蛋糕做大？</h3>
-                    <ul>
-                        <li>智能制造</li>
-                        <li>智慧农业</li>
-                        <li>降本增效</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><span class="blue">公平之问</span><br>如何把蛋糕分好？</h3>
-                    <ul>
-                        <li>平台垄断监管</li>
-                        <li>零工经济保障</li>
-                        <li>数字鸿沟问题</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><span class="blue">安全之问</span><br>如何保护资产？</h3>
-                    <ul>
-                        <li>数据产权归属</li>
-                        <li>隐私泄露风险</li>
-                        <li>安全与信任</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+    <div class="card" style="margin-top: 20px;">
+      <p style="font-size: 16px; color: #4a5568; line-height: 1.7;">
+        <span class="hl">数据说话</span>：2021年中国数字经济增加值<span class="hl">45.5万亿元</span>，占GDP约<span class="hl">40%</span>。<br>
+        其中产业数字化占81.7%——<span class="orange">传统产业的数字化转型才是大头</span>。
+      </p>
     </div>
-    
-    <!-- Slide 11: AI发展新影响 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>AI发展新影响</h1>
-            <h2>2026年的数字经济发展</h2>
-            <div class="grid2">
-                <div class="card">
-                    <h3>AI重塑生产要素</h3>
-                    <ul>
-                        <li><span class="hl">数据智能化</span>：从被动记录到主动预测</li>
-                        <li><span class="hl">算力普惠化</span>：算力成为公共品</li>
-                        <li><span class="hl">算法通用化</span>：大模型赋能千行百业</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>AI驱动产业升级</h3>
-                    <ul>
-                        <li><span class="green">智能制造</span>：工厂全面智能化</li>
-                        <li><span class="green">智慧金融</span>：智能投顾与风控</li>
-                        <li><span class="green">精准医疗</span>：AI辅助诊疗</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  </div>
+</div>
+
+<!-- Slide 6: 挑战 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>冷思考</h1>
+    <h2>数字经济的另一面：数字鸿沟</h2>
+
+    <div class="ask-box">
+      <h3>一个小问题</h3>
+      <p>
+        你教家里老人用手机支付花了多久？<br>
+        对你来说1分钟的事，对很多老人来说可能是一道<span class="hl">跨不过去的坎</span>。
+      </p>
     </div>
-    
-    <!-- Slide 12: AI带来的挑战 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>AI带来的全新挑战</h1>
-            <div class="card">
-                <h3><span class="red">算法偏见与歧视</span></h3>
-                <p style="font-size: 17px; color: #4a5568;">AI模型可能固化现实偏见，导致招聘、信贷等决策不公平</p>
-            </div>
-            <div class="card">
-                <h3><span class="red">就业结构冲击</span></h3>
-                <p style="font-size: 17px; color: #4a5568;">AI自动化替代大量重复性劳动岗位，劳动力技能转型迫切</p>
-            </div>
-            <div class="card">
-                <h3><span class="red">数据安全与隐私</span></h3>
-                <p style="font-size: 17px; color: #4a5568;">大规模数据处理增加隐私泄露和安全攻击风险</p>
-            </div>
-        </div>
+
+    <div class="grid2" style="margin-top: 15px;">
+      <div class="card">
+        <h3>数字鸿沟的三个层面</h3>
+        <ul>
+          <li><span class="hl">接入鸿沟</span>：农村网络覆盖不足，部分人群无法上网</li>
+          <li><span class="hl">使用鸿沟</span>：老年人不会用智能手机、不会扫码</li>
+          <li><span class="hl">能力鸿沟</span>：数字技能差距导致就业机会不平等</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>真实的影响</h3>
+        <ul>
+          <li>医院挂号全靠手机，不会操作就挂不上号</li>
+          <li>现金支付被拒绝，没手机买不了东西</li>
+          <li>网约车取代出租车，路边打车越来越难</li>
+        </ul>
+        <p style="font-size: 14px; color: #e53e3e; margin-top: 10px;">效率提升了，但不是每个人都能享受</p>
+      </div>
     </div>
-    
-    <!-- Slide 13: 总结 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>总结</h1>
-            <div class="card">
-                <h3>数字经济的核心要点</h3>
-                <ol>
-                    <li><span class="hl">定义</span>：以数据为核心生产要素的新经济形态（G20、信通院、国家统计局三个定义）</li>
-                    <li><span class="hl">构成</span>：数字产业化（核心产业）+ 产业数字化（融合发展）</li>
-                    <li><span class="hl">诞生原因</span>：解决传统经济的信息、成本、效率问题</li>
-                    <li><span class="hl">基础条件</span>：数据（新石油）、算力（新引擎）、算法与网络（新道路）</li>
-                    <li><span class="hl">研究内容</span>：把蛋糕做大（效率）、分好（公平）、保护资产（安全）</li>
-                    <li><span class="hl">AI影响</span>：重塑生产要素，驱动产业升级，但也带来新挑战</li>
-                </ol>
-            </div>
-        </div>
+
+    <div class="card" style="margin-top: 15px;">
+      <p style="font-size: 17px; color: #1e3c72; font-weight: 600;">
+        所以我们讲数字经济，不能只讲"效率提升了多少"，还要问一句：<span class="red">谁被落下了？</span>
+      </p>
     </div>
-    
-    <!-- Slide 14: 思考与互动 -->
-    <div class="slide">
-        <div class="content-box">
-            <h1>思考与互动</h1>
-            <div class="ask-box">
-                <h3>课堂讨论</h3>
-                <ol>
-                    <li>数字经济如何改变了你的"衣食住行"？</li>
-                    <li>你认为AI会给你的学习和工作带来什么影响？</li>
-                    <li>如何看待数字经济带来的新挑战？</li>
-                </ol>
-            </div>
-            <div class="card">
-                <h3>下节课预告</h3>
-                <ul>
-                    <li>平台经济与反垄断</li>
-                    <li>数据要素市场化</li>
-                </ul>
-            </div>
-        </div>
+  </div>
+</div>
+
+<!-- Slide 7: 总结 -->
+<div class="slide">
+  <div class="content-box">
+    <h1>总结</h1>
+    <div class="grid3">
+      <div class="card2">
+        <h3 style="text-align: center;"><span class="blue">新要素</span></h3>
+        <p style="font-size: 17px; color: #4a5568; text-align: center; line-height: 1.7;">
+          数据取代传统要素<br>成为经济增长的<br><span class="hl" style="font-size: 20px;">核心驱动力</span>
+        </p>
+      </div>
+      <div class="card3">
+        <h3 style="text-align: center;"><span class="green">新效率</span></h3>
+        <p style="font-size: 17px; color: #4a5568; text-align: center; line-height: 1.7;">
+          数字技术与传统产业<br>深度融合<br><span class="green" style="font-size: 20px;">效率大幅提升</span>
+        </p>
+      </div>
+      <div class="card4">
+        <h3 style="text-align: center;"><span class="orange">新挑战</span></h3>
+        <p style="font-size: 17px; color: #4a5568; text-align: center; line-height: 1.7;">
+          数字鸿沟提醒我们<br>效率之外<br><span class="orange" style="font-size: 20px;">公平同样重要</span>
+        </p>
+      </div>
     </div>
-    
-    <!-- Slide 15: 结束页 -->
-    <div class="slide end-slide">
-        <div class="content-box">
-            <h1>谢谢观看</h1>
-            <p class="sub" style="margin-top: 45px;">欢迎提问</p>
-            <p class="sub">冯泽宇 | sxjl3496@gmail.com</p>
-            <p class="sub" style="font-size: 16px; margin-top: 28px;">2026.05.08</p>
-        </div>
+  </div>
+</div>
+
+<!-- Slide 8: 互动+致谢 -->
+<div class="slide end-slide">
+  <div class="content-box">
+    <h1>思考题</h1>
+    <div class="ask-box" style="text-align: left; max-width: 700px; margin: 20px auto;">
+      <h3 style="text-align: center;">课后思考</h3>
+      <p>
+        1. 数字经济是如何改变你的"衣食住行"的？<br>
+        2. 你身边有没有人因为"不会用手机"而遇到困难？<br>
+        3. 如果让你给家乡的老人设计一款数字产品，你会怎么做？
+      </p>
     </div>
-    
-    <div class="nav">← 左滑上一页 | 右滑下一页 →</div>
-    <div class="progress" id="progress"></div>
-    
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        const progress = document.getElementById('progress');
-        let touchStartX = 0, touchEndX = 0;
-        
-        function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (n + totalSlides) % totalSlides;
-            slides[currentSlide].classList.add('active');
-            progress.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
-            window.scrollTo(0, 0);
-        }
-        
-        document.addEventListener('keydown', e => {
-            if (e.key === 'ArrowRight' || e.key === ' ') showSlide(currentSlide + 1);
-            else if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
-        });
-        
-        document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, false);
-        document.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (Math.abs(touchStartX - touchEndX) > 50) {
-                showSlide(currentSlide + (touchStartX > touchEndX ? 1 : -1));
-            }
-        }, false);
-        
-        progress.style.width = (1 / totalSlides * 100) + '%';
-    </script>
+    <p class="sub" style="margin-top: 30px; font-size: 20px;">谢谢大家</p>
+    <p class="sub" style="font-size: 16px; color: #a0aec0; margin-top: 15px;">冯泽宇 | 2026.05.08</p>
+  </div>
+</div>
+
+<div class="nav">← 左滑上一页 | 右滑下一页 →</div>
+<div class="progress" id="progress"></div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const progress = document.getElementById('progress');
+let touchStartX = 0, touchEndX = 0;
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (n + totalSlides) % totalSlides;
+  slides[currentSlide].classList.add('active');
+  progress.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') showSlide(currentSlide + 1);
+  else if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+});
+
+document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, false);
+document.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  if (Math.abs(touchStartX - touchEndX) > 50) {
+    showSlide(currentSlide + (touchStartX > touchEndX ? 1 : -1));
+  }
+}, false);
+
+progress.style.width = (1 / totalSlides * 100) + '%';
+</script>
 </body>
 </html>
